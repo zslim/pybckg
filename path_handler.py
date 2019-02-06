@@ -4,10 +4,11 @@ PATH_FILE = "path_to_dir.txt"
 
 
 def get_path():
-    with open(PATH_FILE) as f:
+    with open(PATH_FILE, "r+") as f:
         dir_path = f.read()
-    if not os.path.isdir(dir_path):
-        dir_path = get_path_input("Please enter the absolute path to the folder that contains your pictures: ")
+        if not os.path.isdir(dir_path):
+            dir_path = get_path_input("Please enter the absolute path to the folder that contains your pictures: ")
+            f.write(dir_path)
     return dir_path
 
 
