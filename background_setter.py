@@ -18,5 +18,7 @@ def get_random_picture():
 
 def set_background():
     pic_path = get_random_picture()
-    shell_command = ["gsettings", "set", "org.gnome.desktop.background", "picture-uri", "file://" + pic_path]
-    subprocess.run(shell_command)
+    desktop_setter = ["gsettings", "set", "org.gnome.desktop.background", "picture-uri", "file://" + pic_path]
+    subprocess.run(desktop_setter)
+    lock_screen_setter = ["gsettings", "set", "org.gnome.desktop.screensaver", "picture-uri", "file://" + pic_path]
+    subprocess.run(lock_screen_setter)
