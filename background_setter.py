@@ -6,7 +6,8 @@ import subprocess
 
 def get_list_of_pics():
     dir_path = path_handler.get_path()
-    picture_paths = os.listdir(dir_path)
+    picture_names = os.listdir(dir_path)
+    picture_paths = [os.path.join(dir_path, pic) for pic in picture_names]
     return picture_paths
 
 
