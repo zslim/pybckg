@@ -5,9 +5,9 @@ import subprocess
 
 
 def get_list_of_pics():
-    dir_path = path_handler.get_path()
-    picture_names = os.listdir(dir_path)
-    picture_paths = [os.path.join(dir_path, pic) for pic in picture_names]
+    dir_path = path_handler.get_path()  # TODO: this makes this module dependent on path_handler :/
+    picture_names = os.listdir(dir_path)  # TODO: check extensions of files
+    picture_paths = [os.path.join(dir_path, pic) for pic in picture_names]  # TODO: os.path.realpath?
     return picture_paths
 
 

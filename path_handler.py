@@ -15,7 +15,7 @@ def get_path():
 def get_path_input(message):
     user_input = input(message)
 
-    while not os.path.isdir(user_input):
+    while not os.path.isdir(user_input):  # TODO: could crash if automatized
         print("Invalid path: ", user_input)
         user_input = input(message)
 
